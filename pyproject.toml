@@ -1,0 +1,49 @@
+[project]
+name = 'countess-batch'
+dynamic = ["version"]
+readme = "README.md"
+authors = [
+    { name = "Nick Moore", email="nick@zoic.org" },
+]
+maintainers = [
+    { name = "Nick Moore", email="nick@zoic.org" },
+]
+description = "CountESS"
+requires-python = ">=3.9"
+license = { text = "BSD-3-Clause" }
+classifiers = [
+    'Development Status :: 2 - Pre-Alpha',
+    'Intended Audience :: Science/Research',
+    'License :: OSI Approved :: BSD License',
+    'Operating System :: OS Independent',
+    'Topic :: Scientific/Engineering :: Bio-Informatics',
+]
+dependencies = [
+    'countess~=0.0.83',
+]
+
+[project.optional-dependencies]
+dev = [
+    'black<24',
+    'build==0.10.0',
+    'mypy~=1.0.1',
+    'pylint~=3.2.3',
+    'semver~=3.0.2',
+    'twine~=4.0.2',
+    'pytest~=7.2',
+]
+
+
+[project.entry-points.console_scripts]
+countess_batch = "countess_batch:main"
+
+[tool.setuptools.dynamic]
+version = { attr = "countess_batch.VERSION" }
+readme = { file = "README.md", content-type="text/markdown" }
+
+[tool.pylint]
+max-line-length = 120
+
+[tool.black]
+line-length = 120
+

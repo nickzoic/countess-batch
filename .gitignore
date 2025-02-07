@@ -1,0 +1,16 @@
+__pycache__/
+*.egg-info/
+dist/
+build/
+.*.sw?
+*~
+*.csv
+.envrc
+.direnv/
+result*
+junk/
+docs/_site/
+docs/.jekyll-metadata
+*.backup
+coverage.json
+.coverage
