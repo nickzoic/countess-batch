@@ -42,7 +42,7 @@ version = { attr = "countess_batch.VERSION" }
 readme = { file = "README.md", content-type="text/markdown" }
 
 [tool.setuptools.package-data]
-"countess_batch" = ["templates/*.ini"]
+"countess_batch_templates" = ["countess_batch_templates/*.ini"]
 
 [tool.pylint]
 max-line-length = 120
