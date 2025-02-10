@@ -7,15 +7,19 @@ configuration file(s) directly from an Illumina sample sheet.
 
 `pip install countess-batch`
 
+This will install a command line utility `countess_batch` and bring in `countess` as well.
+You can run this within a virtual environment or conda if you'd prefer.
+
 ## Preprocessing
 
-You'll need to install these separately as they have 
+You'll need to install these programs separately as they have 
 licenses which prevent them being bundled into this package.
 
 * First use `bcl2fastq` to generate many fastq files.
   It will put these into a directory structure compatible with
   countess-batch.
 * Then use `pear` or `flash2` or `ngmerge` or similar to merge paired end reads
+
 
 **XXX Need explicit instructions about file layout.**
 
@@ -27,6 +31,9 @@ licenses which prevent them being bundled into this package.
 * Already paired FASTQ files in a directory, with a certain structure
   (see instructions above)
 * Barcode variant map *OR* Barcode sequence map and target sequence.
+
+**XXX if you've got a barcode -> variant map that's one less step than if you've
+got a barcode -> sequence map and need to use the variant caller.**
 
 Input directories are never written to or deleted from!
 
@@ -55,3 +62,9 @@ options, so all you have to do is run them with
 ## Results
 
 Results are written as `output_directory/scores_$GENE_R$REPLICATE.csv.gz` etc.
+
+## Templates
+
+countess-batch uses templates to generate the CountESS configuration files,
+at the moment the only one is `vampseq`.  Parts of these files are overridden by 
+countess-batch, eg: with the locations of the input files.
